@@ -94,3 +94,20 @@ nav h2 i{
     font-size: 1.8rem;
     margin-left: 0.3rem;
 }
+
+
+/* ==================MEDIA QURIES (MEDIUM DEVICES)=============== */
+
+@media screen and (max-width:1024px){
+
+    
+}
+
+/* ==================MEDIA QURIES (SMALL DEVICES)=============== */
+
+@media screen and (max-width:600px) {
+    .age__calculator__container{
+        padding: 1rem;
+        width: 22rem;
+    }
+}
