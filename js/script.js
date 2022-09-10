@@ -13,6 +13,14 @@ function calculateAge(){
     var starts = moment(START_DATE.value ,"DD-MM-YYYY")
     var ends = moment(END_DATE.value, "DD-MM-YYYY")  
     
+
+    if(starts.isAfter(ends)){
+        Toastify({
+            text: "Date of birth could not be greater than marriage date",
+            duration: 3000
+            }).showToast();
+        return
+    }
     var diff = moment.preciseDiff(starts, ends, true);
     
     
@@ -25,7 +33,16 @@ function calculateAge(){
         return
 
     }
-    console.log(diff)
     SHOW_RESULT.innerHTML = `<span>${diff.years}</span> Years <span>${diff.months}</span> Months <span>${diff.days}</span> Days`
 
+}
+
+window.onload = loadEndDate()
+
+function loadEndDate(){
+    var todayDate = new Date()
+    var year = todayDate.getFullYear()
+    var month = todayDate.getMonth()
+    var date = todayDate.getDate()
+    END_DATE.value = `${date}-${month+1}-${year}`
 }
